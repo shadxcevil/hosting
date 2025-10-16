@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TechMOTO.com</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+
+    <link rel="stylesheet" 
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+
+    <style type="text/css">
+ *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+:root{
+    --bg-color: #222327;
+    --text-color: #fff;
+    --main-color: #ff0000;
+}
+body{
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all .50s ease;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo span{
+    color: var(--main-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.logo i{
+    font-size: 23px;
+}
+.navbar{
+    display: flex;
+}
+.navbar a{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    margin: 0px 30px;
+    transition: all .50s ease;
+}
+.navbar a:hover{
+    color: var(--main-color);
+}
+.navbar a.active{
+    color: var(--main-color);
+}
+.main{
+    display: flex;
+    align-items: center;
+}
+.main a{
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.user i{
+    color: var(--main-color);
+    font-size: 20px;
+    margin-right: 7px;
+}
+.main a:hover{
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+
+@media (max-width: 1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+    .navbar a{
+        padding: 5px 0; 
+        margin: 0px 20px;
+    }
+}
+
+@media (max-width: 1090px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -1000%;
+        width: 270px;
+        height: auto;
+        background: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+        transition: all .50s ease;
+    }
+    .navbar a{
+        display: block;
+        margin: 9px 0;
+        padding: 0px 25px;
+        transition: all .50s ease;
+    }
+    .navbar a:hover{
+        color: var(--text-color);
+        transform: translateY(5px); 
+    }
+    .navbar a.active{
+        color: var(--text-color);
+    }
+    .navbar.open{
+        right: 2%;
+    }
+}
+    /* Video Background */
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+        
+    .video-background video {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+        
+    </style>
+</head>
+<body>
+	 <header>
+        <a href="home.html" class="logo"><span>TechMOTO<i class="ph-fill ph-motorcycle"></i></span></a>
+        <nav>
+        <ul class="navbar">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="motor.html" class="active">Motorcycle <i class="ri-search-line"></i></a></li>
+            <li><a href="servis.html">Service</a></li>
+            <li><a href="job.html">Job Posting</a></li>
+        </ul>
+        </nav>
+        <div class="main">
+            <a href="kontak.html"><i class="ri-user-fill"></i> Contact</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+<section class="section search-section" id="search">
+    <div class="container">
+        <h2 class="section-title">Popular <span>Brands</span></h2>
+        <p class="section-subtitle">Browse services by motorcycle brand</p>
+        
+        <div class="brand-buttons">
+            <a href="yamaha.html" class="brand-btn yamaha">
+                <img src="https://cdn.pixabay.com/photo/2020/05/09/23/13/yamaha-r1-5151729_640.png" alt="Yamaha">
+                <span>Yamaha</span>
+            </a>
+            <a href="honda.html" class="brand-btn honda">
+                <img src="https://ik.imagekit.io/zlt25mb52fx/ahmcdn/tr:w-550,f-auto/uploads/product/thumbnail/thumbnail-cbr150r-550x413px-tr-new-2-21112024-100742.png" alt="Honda">
+                <span>Honda</span>
+            </a>
+            <a href="harley.html" class="brand-btn harley">
+                <img src="https://d2bywgumb0o70j.cloudfront.net/2018/12/19/cf63a5de1ccf673de8efedc003d7201a_d062c3812df808d3.png" alt="Harley-Davidson">
+                <span>Harley-Davidson</span>
+            </a>
+            <a href="suzuki.html" class="brand-btn suzuki">
+                <img src="https://cdn.juraganwp.com/aripitstop/wp-content/uploads/2021/12/suzuki-hayabusa-2022-1.png" alt="Benelli">
+                <span>Suzuki</span>
+            </a>
+        </div>
+    </div>
+
+</section>
+	<div class="video-background">
+            <video autoplay loop muted playsinline>
+                <source src="CB500.mp4" type="video/mp4">
+            </video>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ray Aji.D.D | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #29fd53;
+            --secondary: #27ae60;
+            --dark: #fff;
+            --light: #222327;
+            --gray: #11FF00;
+            --bg-tpmt: #353E35;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+            /* Basic styling for the button */
+        .top-right-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+            /* Hover effect */
+        .top-right-button:hover {
+            background-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+            /* Active/click effect */
+        .top-right-button:active {
+            transform: scale(0.98);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border-color: var(--gray);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 5px solid white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            color: var(--dark);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .about-text {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            grid-gap: 1rem;
+        }
+        
+        .skill-chip {
+            background-color: var(--bg-tpmt);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: 500;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 2rem;
+        }
+        
+        .project-card {
+            background: var(--bg-tpmt);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-links {
+            display: flex;
+            grid-gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .project-links a {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        /* Back to Top Button Styles */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--dark);
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.back-to-top i {
+    font-size: 1.2rem;
+}
+        /* Add to your CSS */
+body.dark-mode {
+    background-color: #ffffff;
+    color: #000000;
+}
+/* Add JavaScript toggle */
+        @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--dark);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .top-right-button {
+                padding: 8px 16px;
+                font-size: 14px;
+                top: 10px;
+                right: 10px;
+            }
+            .container {
+                padding: 1.5rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a class="top-right-button" href="home.html">back to home</a>
+            <img src="rayaji.jpg" alt="Profile" class="profile-img">
+            <h1>RAY AJI DIPA DINANGGA</h1>
+            <p class="tagline">Ready to work | Part time | Remote | from Indonesian</p>
+            <div class="social-links">
+                <a href="https://github.com/BleazeMyFire"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ray-aji-534645373/?trk=opento_sprofile_pfeditor"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/dinanggaa?utm_source=ig_web_button_share_sheet&igsh=MTAwZ2c3cjE5Z2x6NA=="><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/rayaji.dipadinangga"><i class="fab fa-facebook"></i></a>
+            </div>
+        </header>
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="about-text">
+                 I love designing websites and writing HTML. Creating layouts from scratch excites me—it’s like turning ideas into real, interactive pages. I enjoy crafting clean, responsive designs with CSS, improving old projects, and building sites that reflect my style.<br><br>
+
+For me, web design blends logic and creativity. I take pride in writing clean code and learning new techniques. Every button, form, and layout I build helps me grow. It’s a rewarding passion that lets me express myself and share my work with the world.
+            </p>
+            <p class="about-text">
+                 I love photography—it helps me capture moments and appreciate details, which often inspires my web designs. Videography lets me tell stories through short films I edit and share. Drawing relaxes me and sparks ideas for digital projects. Acting in YouTube videos boosts my confidence and creativity.<br><br>
+
+All these hobbies connect to my passion for design, shaping my perspective and fueling my work every day.<br>
+            </p>
+        </section>
+        
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <span class="skill-chip">Web Builder</span>
+                <span class="skill-chip">Web Designer</span>
+                <span class="skill-chip">HTML/CSS</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">Drawing Art</span>
+                <span class="skill-chip">Device Technicial</span>
+                <span class="skill-chip">Public speaking</span>
+                <span class="skill-chip">Photography</span>
+                <span class="skill-chip">Videography</span>
+                <span class="skill-chip">Photo/Video editing</span>
+                <span class="skill-chip">Acting</span>
+                <span class="skill-chip">Expert leader</span>
+                <span class="skill-chip">Using AI for auto sevice</span>
+                <span class="skill-chip">Make a good prompt for use AI</span>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="IMG_20250623_092717_757.jpg" alt="Project 1" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Build Website</h3>
+                        <p>I actually created this website for school assessment and I was free to choose what type of website to create.<br> in the end I chose to create a motorbike sales website, I used HTML, CSS, and JavaScript.</p>
+                        <div class="project-links">
+                            <a href="https://bleazemyfire.github.io/techmoto/home.html"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/BleazeMyFire/techmoto"><i class="fab fa-github"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="t3.jpg" alt="Project 2" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Service and cleaning device</h3>
+                        <p>
+                            I made this project actually to make a profit from selling service to people who has problem with their device.<br> On the other hand, I also want to help people to make their devices usable for a long and long time. 
+                        </p>
+                        <div class="project-links">
+                            <a href="https://www.instagram.com/reel/DMErVVHBFDt/?utm_source=ig_web_button_share_sheet"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://www.instagram.com/dinanggaa?igsh=aGhzd3IxcjdjeG1o"><i class="fab fa-instagram"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div><br><br>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="t1.jpg" alt="Project 1" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Acting for short film competition purposes</h3>
+                        <p>Honestly it's not my ideas for made a short films but my best friend (raffa) need someone who can acting for making a film</p>
+                        <div class="project-links">
+                            <a href="https://youtu.be/oSMmbcufamw?si=oIJTQ6FkHo7-d1tu"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://youtube.com/@rff-n7z?si=6REZJplMKfa3oqM6"><i class="fab fa-youtube"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="t2.jpg" alt="Project 1" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">Another acting for make short film </h3>
+                        <p>This one little different than the other one, This film was made for school assessment purposes.</p>
+                        <div class="project-links">
+                            <a href="https://youtu.be/JTZSfZxQU3I?si=Cs-qlz1QYWL_37XW"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://youtube.com/@rff-n7z?si=6REZJplMKfa3oqM6"><i class="fab fa-youtube"></i> Source Code</a>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+        
+        <footer>
+            <p>©2025 by Ray aji. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+    // Back to Top Button Functionality
+    document.getElementById('actionButton').addEventListener('click', function() {
+    alert('Button clicked!');
+    // Or any other action you want
+    });
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopButton.style.display = 'flex';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    </script>
+</body>
+</html>

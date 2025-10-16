@@ -1,0 +1,110 @@
+/* Background abu-abu gelap */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #2f2f2f;
+  color: #ddd;
+}
+
+/* Container pusat */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Profile card abu-abu */
+.profile-card {
+  background-color: #555555;
+  padding: 30px;
+  border-radius: 15px;
+  width: 600px; /* lebih lebar */
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Foto profil */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #888;
+}
+
+/* Tombol */
+.btn {
+  flex: 1 1 45%;
+  max-width: 220px;
+  padding: 12px 0;
+  background-color: #888;
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #aaa;
+  color: #111;
+}
+
+/* Galeri Foto */
+.gallery {
+  margin-top: 20px;
+  margin-bottom: 25px; /* tambahan jarak bawah */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Gaya foto galeri */
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: ;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Aspect ratio 1:1 untuk foto 1080x1080 */
+.gallery img[alt*="1080x1080"] {
+  aspect-ratio: 1 / 1;
+}
+
+/* Aspect ratio 4:5 untuk foto 1080x1350 */
+.gallery img[alt*="1080x1350"] {
+  aspect-ratio: 4 / 5;
+}
+
+/* Hover efek foto */
+.gallery img:hover {
+  transform: scale(1.05);
+}
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* List pada halaman rangkuman agar kiri */
+ul {
+  padding-left: 20px;
+}
+@media (min-width: 600px) {
+  body > .container > .profile-card {
+    width: 600px; /* lebar lebih besar */
+  }
+}
